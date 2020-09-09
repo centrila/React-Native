@@ -23,7 +23,7 @@ class CampsiteInfo extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            camspites: CAMPSITES
+            campsites: CAMPSITES
         };
     }
 
@@ -33,7 +33,7 @@ class CampsiteInfo extends Component {
 
     render() {
         const campsiteId = this.props.navigation.getParam('campsiteId');
-        const campsite = this.state.camspites.filter(campsite => campsite.id === campsiteId)[0];
+        const campsite = this.state.campsites.filter(campsite => campsite.id === campsiteId)[0];
         return <RenderCampsite campsite={campsite} />;
     }
 }
