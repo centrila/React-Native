@@ -34,12 +34,12 @@ class About extends Component {
   };
 
   render() {
-    const renderPartner = ({ item }) => {
+    const renderPartner = ({item}) => {
       return (
         <ListItem
           title={item.name}
           subtitle={item.description}
-          leftAvatar={{ source: {uri: baseUrl + item.image}}}
+          leftAvatar={{source: {uri: baseUrl + item.image}}}
         />
       );
     };
@@ -60,7 +60,7 @@ class About extends Component {
         <ScrollView>
           <Mission />
           <Card 
-          title={"Community Partners"}>
+          title="Community Partners">
             <Text>{this.props.partners.errMess}</Text>
           </Card>
         </ScrollView>

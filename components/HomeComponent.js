@@ -48,6 +48,7 @@ class Home extends Component {
     }
 
     render() {
+        console.log(this.props.campsites,"##aaahahahahahahahah#")
         return (
             <ScrollView>
                  <RenderItem
