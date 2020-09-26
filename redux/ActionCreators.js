@@ -32,6 +32,7 @@ export const addComments = (comments) => ({
 });
 
 export const fetchCampsites = () => dispatch => {
+    console.log(baseUrl)
 
     dispatch(campsitesLoading());
 
