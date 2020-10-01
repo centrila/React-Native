@@ -32,19 +32,14 @@ class LoginTab extends Component {
   handleLogin() {
     console.log(JSON.stringify(this.state));
     if (this.state.remember) {
-      SecureStore.setItemAsync(
-        "userinfo",
-        JSON.stringify({
-          username: this.state.username,
-          password: this.state.password,
-        })
-      ).catch((error) => console.log("Could not save user info", error));
+        SecureStore.setItemAsync('userinfo', JSON.stringify(
+            {username: this.state.username, password: this.state.password}))
+            .catch(error => console.log('Could not save user info', error));
     } else {
-      SecureStore.deleteItemAsync("userinfo").catch((error) =>
-        console.log("Could not delete user info", error)
-      );
+        SecureStore.deleteItemAsync('userinfo')
+            .catch(error => console.log('Could not delete user info', error));
     }
-  }
+}
 
   componentDidMount() {
     SecureStore.getItemAsync("userinfo").then((userdata) => {
@@ -85,31 +80,31 @@ class LoginTab extends Component {
         />
         <View style={styles.formButton}>
           <Button
-            onPress={() => this.handleLogin()}
-            title="Login"
-            icon={
-              <Icon
-                name="sign-in"
-                type="font-awesome"
-                color="#fff"
-                iconStyle={{ marginRight: 10 }}
-              />
+                onPress={() => this.handleLogin()}
+                title="Login"
+                icon={
+                <Icon
+                    name="sign-in"
+                    type="font-awesome"
+                    color="#fff"
+                    iconStyle={{ marginRight: 10 }}
+                />
             }
             buttonStyle={{ backgroundColor: "#5637DD" }}
           />
         </View>
         <View style={styles.formButton}>
           <Button
-            onPress={() => this.props.navigation.navigate("Register")}
-            title="Register"
-            type="clear"
-            icon={
-              <Icon
-                name="user-plus"
-                type="font-awesome"
-                color="blue"
-                iconStyle={{ marginRight: 10 }}
-              />
+                onPress={() => this.props.navigation.navigate("Register")}
+                title="Register"
+                type="clear"
+                icon={
+                    <Icon
+                        name="user-plus"
+                        type="font-awesome"
+                        color="blue"
+                        iconStyle={{ marginRight: 10 }}
+                    />
             }
             titleStyle={{ color: "blue" }}
           />
@@ -133,17 +128,16 @@ class RegisterTab extends Component {
       imageUrl: baseUrl + "images/logo.png",
     };
   }
-
   static navigationOptions = {
-    title: "Register",
-    tabBarIcon: ({ tintColor }) => (
-      <Icon
-        name="user-plus"
-        type="font-awesome"
-        iconStyle={{ color: tintColor }}
-      />
-    ),
-  };
+    title: 'Register',
+    tabBarIcon: ({tintColor}) => (
+        <Icon
+            name='user-plus'
+            type='font-awesome'
+            iconStyle={{color: tintColor}}
+        />
+    )
+}
 
   getImageFromCamera = async () => {
     const cameraPermission = await Permissions.askAsync(Permissions.CAMERA);
@@ -161,22 +155,17 @@ class RegisterTab extends Component {
     }
 }
 
-  handleRegister() {
+handleRegister() {
     console.log(JSON.stringify(this.state));
     if (this.state.remember) {
-      SecureStore.setItemAsync(
-        "userinfo",
-        JSON.stringify({
-          username: this.state.username,
-          password: this.state.password,
-        })
-      ).catch((error) => console.log("Could not save user info", error));
+        SecureStore.setItemAsync('userinfo', JSON.stringify(
+            {username: this.state.username, password: this.state.password}))
+            .catch(error => console.log('Could not save user info', error));
     } else {
-      SecureStore.deleteItemAsync("userinfo").catch((error) =>
-        console.log("Could not delete user info", error)
-      );
+        SecureStore.deleteItemAsync('userinfo')
+            .catch(error => console.log('Could not delete user info', error));
     }
-  }
+}
 
   render() {
     return (
