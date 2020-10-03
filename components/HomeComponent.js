@@ -67,8 +67,7 @@ class Home extends Component {
         <RenderItem
           item={
             this.props.campsites.campsites.filter(
-              (campsite) => campsite.featured
-            )[0]
+              (campsite) => campsite.featured)[0]
           }
           isLoading={this.props.campsites.isLoading}
           errMess={this.props.campsites.errMess}
@@ -76,8 +75,7 @@ class Home extends Component {
         <RenderItem
           item={
             this.props.promotions.promotions.filter(
-              (promotion) => promotion.featured
-            )[0]
+              (promotion) => promotion.featured)[0]
           }
           isLoading={this.props.promotions.isLoading}
           errMess={this.props.promotions.errMess}
@@ -85,8 +83,7 @@ class Home extends Component {
         <RenderItem
           item={
             this.props.partners.partners.filter(
-              (partner) => partner.featured
-            )[0]
+              (partner) => partner.featured)[0]
           }
           isLoading={this.props.partners.isLoading}
           errMess={this.props.partners.errMess}
